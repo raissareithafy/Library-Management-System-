@@ -1,62 +1,84 @@
 # 📚 Library Management System
 
-A beginner-friendly Python Library Management System developed as part of a Capstone Project at Purwadhika. The project implements CRUD operations to manage book records, along with borrowing and returning books, book search, book deletion, and basic library statistics.
+A simple console-based Library Management System built with Python.
 
-## 📌 About the Project
+## 🎯 Project Overview
 
-This project is a simple console-based Library Management System designed to manage book records and their availability status. The system allows users to add, view, search, update, and delete book records through an interactive menu in the terminal. The project was developed to apply fundamental Python programming concepts learned during the course.
+This project is a CRUD-based library management system that allows users to manage book records through a menu-driven program.
+
+The system allows users to:
+
+- View all books
+- Search for a book by Book ID 
+- Add new book
+- Borrow book
+- Return book
+- Delete book
+- View library statistics
+- Exit the program
 
 ## ✨ Features
 
-- 📖 View all books
-- 🔍 Search books by Book ID
-- ➕ Add new books
-- 📤 Borrow books
-- 📥 Return books
-- 🗑️ Delete books
-- 📊 View library statistics
-- ✅ Prevent duplicate Book IDs
-- 📈 Calculate book availability rate
+### 📖 Read
 
-## 🛠️ Python Concepts Used
+- View all books in the library
+- Search for a specific book using its Book ID
+- Display book details including:
+  - Book ID
+  - Book Name
+  - Author
+  - Availability
+- Handle Book IDs that don't exist
 
-This project demonstrates the following Python fundamentals:
+### ➕ Create
 
-- Variables and data types
-- Lists
-- Dictionaries
-- User input with `input()`
-- Conditional statements (`if`, `elif`, `else`)
-- `for` and `while` loops
-- Functions
-- Boolean values
-- List methods such as `append()` and `remove()`
-- Dictionary value updates
-- Basic calculations
-- CRUD operations
+- Add a new book to the library
+- Check for duplicate Book IDs
+- Automatically set new books as `Available`
+- Confirm before saving a new book
+- Handle invalid save options
 
-## 🔄 CRUD Operations
+### 🔄 Update
 
-| Operation | Feature | Description |
-|-----------|---------|-------------|
-| Create | Add New Book | Add a new book to the library |
-| Read | View & Search Books | View all books or search by Book ID |
-| Update | Borrow & Return Book | Update a book's availability status |
-| Delete | Delete Book | Remove a book from the library |
+- Borrow an available book
+- Return a borrowed book
+- Check whether the Book ID exists
+- Display book information before updating
+- Confirm before updating the book status
+- Prevent borrowing an already borrowed book
+- Prevent returning a book that is already available
 
-## 📊 Library Statistics
+### 🗑️ Delete
 
-The system provides basic statistics to give an overview of the library's current collection, including:
+- Delete a book using its Book ID
+- Display book information before deletion
+- Confirm before deleting a book
+- Handle Book IDs that do not exist
 
-- Total number of books
-- Number of available books
-- Number of borrowed books
-- Book availability rate
+### 📊 Library Statistics
 
-## 🗂️ Project Structure
+- Display total number of books
+- Display number of available books
+- Display number of borrowed books
+- Calculate the library availability rate
 
-```text
-Library-Management-System/
-│
-├── library_management.py
-└── README.md
+## 🗂️ Data Structure
+
+The library data is stored using a list of dictionaries.
+
+Each book record contains:
+
+- `Book ID` — Primary Key
+- `Book Name`
+- `Author`
+- `Availability`
+
+Example:
+
+```python
+{
+    "Book ID": "B001",
+    "Book Name": "Atomic Habits",
+    "Author": "James Clear",
+    "Availability": "Available"
+}
